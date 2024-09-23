@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>   // For sqrt() function
+#include <conio.h>  // For Turbo C++ compatibility
+
+void main() {
+    clrscr();  // Clear screen for Turbo C++
+
+    float a, b, c, discriminant, root1, root2;
+
+    // Input the coefficients a, b, and c
+    printf("Enter coefficients a, b, and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    // Calculate the discriminant
+    discriminant = (b * b) - (4 * a * c);
+
+    // Check if the discriminant is greater than or equal to zero
+    if (discriminant >= 0) {
+        // Calculate the two roots
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+
+        // Display the roots
+        printf("The roots are: %.2f and %.2f\n", root1, root2);
+    } else {
+        printf("Discriminant is less than zero. No real roots.\n");
+    }
+
+    getch();  // Wait for key press to keep the output screen
+}
